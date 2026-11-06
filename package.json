@@ -1,0 +1,65 @@
+{
+  "name": "dsh-image-scope",
+  "version": "0.0.1",
+  "description": "Pixel-coordinate readout and one adjustable measuring rectangle for the DeepSeek Harness sidebar image preview.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./config.json": "./config.json",
+    "./icon": "./icon.svg",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "config.json",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "assets/*.png"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "image",
+    "pixel",
+    "preview",
+    "measure",
+    "screenshot",
+    "design"
+  ],
+  "author": "olivine13",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olivine13/dsh-image-scope.git"
+  },
+  "homepage": "https://github.com/olivine13/dsh-image-scope#readme",
+  "bugs": {
+    "url": "https://github.com/olivine13/dsh-image-scope/issues"
+  },
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.1-rc.5 <0.3.0-0 || >=0.2.2-rc.1 <0.3.0-0"
+  },
+  "scripts": {
+    "test": "node test/math-test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar-documentpreview",
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}

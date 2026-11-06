@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Image Pixel Scope",
+    "description": "Reads true image-pixel coordinates on hover and measures one adjustable dashed rectangle in sidebar image previews."
+  }
+}
